@@ -1,0 +1,25 @@
+.cookies{
+	z-index:10;
+	position:relative;
+	font-size:12px;
+	padding:10px 10px 10px 30px;
+	opacity:1;
+	transition:opacity .3s;
+
+	a, a:hover{
+		color:inherit;
+		text-decoration: underline;
+	}
+	.close{
+		position:absolute;
+		top:3px;
+		left:7px;
+		font-size:20px;
+		cursor:pointer;
+		display: block;
+	}
+
+	.js &.js-hide{
+		opacity: 0;
+	}
+}

@@ -1,0 +1,84 @@
+html{
+	font-size: 100%;
+}
+
+body{
+	font-family:$font-family-serif;
+	font-size:$font-size-base;
+
+	@media(min-width:$screen-sm){
+		margin-top: 0;
+		transition: margin-top .5s;
+		.js.csstransitions &.js-hide{
+			margin-top: 1200px;
+		}
+	}
+}
+
+.box-padded{
+	margin-left:-($grid-gutter-width / 2);
+	margin-right:-($grid-gutter-width / 2);
+	padding:30px;
+
+	@media(min-width:$screen-sm){
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+// Grid
+// -------------------------
+
+.container {
+	@media (min-width:$screen-sm){
+		padding:0;
+	}
+}
+
+.container-text {
+	@extend .container;
+	@media (min-width:$screen-md){
+		max-width: $container-desktop;
+	}
+}
+
+.container-text-narrow {
+	@extend .container;
+	@media (min-width:$screen-md){
+		max-width: $container-tablet;
+	}
+}
+
+.container-unpadded-xs {
+	@media (min-width:$screen-md){
+		padding:0;
+	}
+}
+
+.col-flushed-edge-xs{
+	@media(max-width:$screen-sm - 1){
+		margin:0 -15px;
+	}
+}
+
+//no gutter
+.row-gutter-none{
+	@include make-row();
+	margin-left:0;
+	margin-right:0;
+
+	*[class*='col-']{
+		padding-left:0;
+		padding-right:0;
+	}
+}
+
+.page-section{
+	padding:30px 0;
+	@include clearfix();
+	overflow:hidden;
+
+	@media(min-width:$screen-sm){
+		padding:50px 0;
+	}
+}

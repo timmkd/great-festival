@@ -1,0 +1,68 @@
+/*
+Theme Name: Main Theme
+Author: McCormack and Morrison
+Author URI: http://www.mccormackmorrison.com
+Description: The main site theme
+Version: 1
+*/
+
+@import "_partials/variables";
+@import "_partials/fonts";
+@import "_mixins/mixins";
+
+//Selected SCSS files included from SASS-BOOTSTRAP
+
+// Core variables and mixins
+@import "../../bower_components/sass-bootstrap/lib/variables";
+@import "../../bower_components/sass-bootstrap/lib/mixins";
+
+// Reset
+@import "../../bower_components/sass-bootstrap/lib/normalize";
+@import "../../bower_components/sass-bootstrap/lib/print";
+
+//Core CSS
+@import "../../bower_components/sass-bootstrap/lib/forms";
+@import "../../bower_components/sass-bootstrap/lib/grid";
+@import "../../bower_components/sass-bootstrap/lib/scaffolding";
+
+
+// Utility classes
+@import "../../bower_components/sass-bootstrap/lib/utilities";
+@import "../../bower_components/sass-bootstrap/lib/responsive-utilities";
+
+@import "_h5bp/normalize";
+@import "_h5bp/h5bp";
+@import "_mixins/media-queries.scss";
+@import "_partials/layout.scss";
+@import "_h5bp/helpers";
+
+// Partials
+@import "_partials/type";
+@import "_partials/utilities";
+@import "_partials/buttons";
+@import "_partials/common";
+@import "_partials/forms";
+@import "_partials/helpers";
+@import "_partials/animations";
+@import "_partials/colorbox";
+@import "_partials/widgetBgShuffle";
+
+// Modules
+@import "_modules/introPanel";
+@import "_modules/menu";
+@import "_modules/header";
+@import "_modules/footer";
+@import "_modules/contentOverlay";
+@import "_modules/tile";
+@import "_modules/isotope";
+@import "_modules/events-carousel";
+@import "_modules/eventLocation";
+@import "_modules/nav-page";
+@import "_modules/carousel";
+@import "_modules/schedule";
+@import "_modules/sessions";
+@import "_modules/changeLanguage";
+@import "_modules/cookies";
+@import "_modules/whowhywhat";
+@import "_modules/contact-form";
+

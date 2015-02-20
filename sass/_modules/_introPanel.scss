@@ -1,0 +1,89 @@
+ .introPanel {
+ 	width:100%;
+  display: table;
+ 	overflow:hidden;
+	-webkit-perspective: 1500px;
+	perspective: 1500px;
+
+	@media(max-width:$screen-sm - 1){
+		padding: 0 0 15px;
+	}
+
+	@media(min-width:$screen-sm){
+		padding: 100px 0;
+	 	height:100%;
+	}
+
+	.welcomeBoxContainer{
+    vertical-align: middle;
+		display: table-cell;
+
+	 	.welcomeBox {
+			margin: 20px auto;
+			padding:30px;
+	 		background: #fff;
+			-webkit-transform:rotateY(0);
+			-webkit-transition: all .5s;
+			transition: all .5s;
+			color: $black;
+			-webkit-perspective: 1500px;
+			perspective: 1500px;
+			position:relative;
+
+			@media(max-width:$screen-sm - 1){
+				max-width: 260px;
+				margin: 20px auto 0;
+			}
+
+			.h2 {
+				margin-bottom:0;
+				@media(max-width:$screen-sm - 1){
+					@include rem('font-size',32px);
+				}
+			}
+
+			p{
+				margin-bottom:.5em;
+			}
+
+			.border-box{
+				margin-bottom: 0;
+			}
+
+			.event-header{
+				line-height:1;
+				margin-bottom:20px;
+
+				.date{ 
+					line-height:1.7;
+				}
+			}
+
+			@media(min-width:$screen-sm){
+		 		margin:0 auto;
+		 		padding:40px;
+		 		width:400px;
+
+				.js  &.js-hide{
+					opacity:0;
+					-webkit-transform:rotateY(-90deg);
+					transform:rotateY(-90deg);
+				}
+			}
+	 	}
+
+	 	.logo.medium{
+	 		margin-top:45px;
+	 	}
+	}
+	//this is for prelive and can be deleted after site goes live
+	.page-footer {
+		@media(min-width:$screen-sm){
+			position:absolute;
+			bottom:0;
+			right:0;
+			left:0;
+		}
+	}
+
+ }

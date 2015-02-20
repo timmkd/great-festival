@@ -1,0 +1,9 @@
+.contact-form{
+	@media(max-width:$screen-sm - 1){
+		padding-bottom:0;
+		
+		.btn-red-gradient{
+			width:100%;
+		}
+	}
+}

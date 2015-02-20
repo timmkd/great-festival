@@ -1,0 +1,121 @@
+.fullwidth{
+	width:100%;
+}
+
+.lowercase {
+	text-transform: lowercase;
+}
+
+.caps {
+	text-transform: uppercase;
+}
+
+.normal-case {
+	text-transform: none;
+}
+
+.overflow-hidden {
+	overflow:hidden;
+}
+
+.not-italic{
+	font-style:normal;
+}
+
+.inline { 
+	display:inline;
+	margin:0;
+}
+
+.text-center-xs{
+	@media(max-width:$screen-sm - 1){
+		text-align:center;
+	}
+}
+
+.text-left-xs{
+	@media(max-width:$screen-sm - 1){
+		text-align:left;
+	}
+}
+
+//colors
+.font-red{	color:$red; }
+
+.font-grey{	color:$grey; }
+.font-grey-dark{	color:$grey-dark; }
+
+.font-black{	color:$black; }
+
+//colors
+.font-size-base {	font-size: $font-size-base; }
+.font-size-large {	font-size: $font-size-large; }
+.font-size-small {	font-size: $font-size-small; }
+.font-size-x-small {	font-size: $font-size-x-small; }
+.font-size-xx-small {	font-size: $font-size-xx-small; }
+
+//backgrounds
+.bg-red {background-color: $red; color:$white; }
+.bg-grey {background-color: $grey; color:$white; }
+.bg-grey-dark {background-color: $grey-dark; color:$white; }
+.bg-grey-darker {background-color: $grey-darker; color:$white; }
+.bg-grey-medium-dark {background-color: $grey-medium-dark; color:$white; }
+.bg-grey-darkest {background-color: $grey-darkest; color:$white; }
+.bg-grey-lightest {background-color: $grey-lightest; }
+.bg-white {background-color: $white; }
+.bg-blue {background-color: $blue; color:$white; }
+.bg-grey-blue {background-color: $grey-blue; color:$white; }
+
+//fonts
+.serif{
+	@include serif();
+}
+
+.serif-italic{
+	@include serif-italic();
+}
+
+.sans-serif{
+	@include sans-serif();
+}
+
+.bg-pattern { background: url(../images/bg-stripes.gif); }
+.bg-pattern-tl { background: url(../images/bg-pattern-tl.png) top right no-repeat; }
+.bg-pattern-tr { background: url(../images/bg-pattern-tr.png) top left no-repeat; }
+.bg-pattern-bl { background: url(../images/bg-pattern-bl.png) top left no-repeat; }
+.bg-pattern-br { background: url(../images/bg-pattern-br.png) top right no-repeat; }
+
+.vertical-align-wrapper{
+	display:table;
+	width:100%;
+
+	.vertical-align {
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+
+.rotate-perspective{
+	-webkit-perspective: 1500px;
+	perspective: 1500px;	
+}
+
+.equal-height-wrapper{
+	display:table;
+	
+	.equal-height {
+		display:table-cell;
+		float:none;
+
+		.border-box {
+			height:100%
+		}
+	}
+}
+
+.padding-none{
+	padding:0;
+}
+.margin-none{
+	margin:0;
+}

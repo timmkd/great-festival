@@ -1,0 +1,11 @@
+/* line 1, ../../sass/_modules/header.scss */
+.header {
+  position: relative;
+}
+/* line 4, ../../sass/_modules/header.scss */
+.header .logo {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 150px;
+}

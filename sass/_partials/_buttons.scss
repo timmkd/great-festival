@@ -1,0 +1,143 @@
+// SOCIAL
+.btn-social {
+	text-indent: -9999em;
+	width:40px;
+	height:40px;
+	margin:0 10px 0 0;
+	padding:0;
+	display:inline-block;
+	background-color: $grey;
+	background-image: url(../images/social.png);
+}
+
+.btn-facebook {
+	@extend .btn-social;
+	background-position: -55px -6px;
+	&:hover{
+		background-color:$color-facebook;
+	}
+}
+
+.btn-twitter {
+	@extend .btn-social;
+	background-position: -3px -8px;
+	&:hover{
+		background-color:$color-twitter;
+	}
+}
+
+.btn-youtube { 
+	@extend .btn-social;
+	background-position: -5px -56px;
+	&:hover{
+		background-color:$color-youtube;
+	}
+}
+
+.btn-semi-transparent{
+	border:2px solid $white;
+	background-color: $grey-darkest;
+	background-color: rgba(0,0,0,0.5);
+	padding:15px 10px;
+	position:relative;
+	z-index:2;
+	display:block;
+	width:56px;
+	height:56px;
+	margin:20px auto 0 auto;
+
+	&.down{
+		background-image:url('../images/arrow-down.png');
+		background-position:center center;
+		background-repeat:no-repeat;
+	}
+
+	&.left{
+		background-image:url('../images/arrow-left.png');
+		background-position:center center;
+		background-repeat:no-repeat;
+	}
+
+	&.right{
+		background-image:url('../images/arrow-right.png');
+		background-position:center center;
+		background-repeat:no-repeat;
+	}
+}
+
+.btn-white{
+	border:2px solid $grey-lighter;
+	background-color: $white;
+	padding:15px 10px;
+	position:relative;
+	display:block;
+	width:56px;
+	height:56px;
+	margin:50px auto 0 auto;
+	z-index:2;
+
+	&.left{
+		background-image:url('../images/arrow-left-grey.png');
+		background-position:center center;
+		background-repeat:no-repeat;
+	}
+
+	&.right{
+		background-image:url('../images/arrow-right-grey.png');
+		background-position:center center;
+		background-repeat:no-repeat;
+	}
+}
+
+.btn-cta{
+	display:block;
+	@extend .sans-serif;
+	text-transform:uppercase;
+	padding:10px;
+	color: $white;
+	background: $red;	
+	width: 100%;
+	border: 0;
+	text-align:center;
+	&:hover{
+		background: $red-dark;
+		text-decoration: none;
+	}
+}
+
+.btn-red {
+	@extend .sans-serif;
+	@extend .caps;
+	background: $red;
+	color: $white;
+	padding:15px;
+	@include rem('font-size',18px);
+	transition:all .3s;
+	border:0;
+	text-decoration:none;
+
+	&:hover{
+		color:$white;
+		background: $red-dark;
+		text-decoration: none;
+	}
+
+	&.fixed-width{
+		width:240px;
+	}
+}
+
+.btn-red-gradient {
+	@extend .btn-red;
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: -moz-linear-gradient(top, $red 50%, $red-dark 50%); /* FF3.6+ */
+	background: -webkit-linear-gradient(top, $red 50%,$red-dark 50%); /* Chrome10+,Safari5.1+ */
+	background: -ms-linear-gradient(top, $red 50%,$red-dark 50%); /* IE10+ */
+	background: linear-gradient(to bottom, $red 50%,$red-dark 50%); /* W3C */
+}
+
+.btn-arrow-right{
+	width:44px;
+	height:44px;
+	background:url(../images/btn-arrow-right.png);
+}

@@ -1,0 +1,488 @@
+.tile{
+	position:relative;
+	width:100%;
+
+	@media(min-width:$screen-sm){
+		display: table;
+			width:$container-tablet/4;
+			height:$container-tablet/4;
+	}
+
+	@media(min-width:$screen-md){
+		display: table;
+			width:$container-desktop/4;
+			height:$container-desktop/4;
+	}
+
+	@media(min-width:$screen-lg){		
+			width:$container-large-desktop/4;
+			height:$container-large-desktop/4;
+	}
+
+	.tile-content {
+		@include clearfix();
+		@media(min-width:$screen-sm){		
+				display: table-cell;
+				padding:10px;
+				width:100%;
+				height:100%;
+		}
+		@media(min-width:$screen-md){		
+				padding:15px;
+		}
+		@media(min-width:$screen-lg){		
+				padding:30px;
+		}
+	}
+}
+
+.tile-title{
+	@extend .tile;
+	padding:20px 0;
+
+	.title{
+		font-size:35px;
+		margin-bottom:0;
+
+		@media(min-width:$screen-sm){
+			font-size: 24px;
+		}
+		@media(min-width:$screen-md){
+			font-size: 34px;
+		}
+		@media(min-width:$screen-lg){
+			font-size: 40px;
+		}
+	}
+}
+
+.tile-double-width{
+	@extend .tile;
+	padding:20px 0;
+
+	.h1{
+		margin:0;
+	}
+	
+	@media(min-width:$screen-sm){
+		width:$container-tablet/2;
+	}
+
+	@media(min-width:$screen-md){
+		width:$container-desktop/2;
+	}
+
+	@media(min-width:$screen-lg){		
+		width:$container-large-desktop/2;
+	}
+}
+
+.tile-double-width-triple-height{
+	@extend .tile;
+
+	@media(min-width:$screen-sm){
+		width:$container-tablet / 2;
+		height:$container-tablet * .75;
+	}
+
+	@media(min-width:$screen-md){
+		width:$container-desktop / 2;
+		height:$container-desktop * .75;
+	}
+
+	@media(min-width:$screen-lg){		
+		width:$container-large-desktop / 2;
+		height:$container-large-desktop * .75;
+	}
+}
+
+.tile-block{
+	@include clearfix();
+	position:relative;
+
+	-webkit-perspective: 1500px;
+	perspective: 1500px;
+
+	.tile-content-wrapper{
+		position:absolute;
+		background:$white;
+		z-index: 100;
+		display: table;
+		opacity:1;
+		-webkit-transition: -webkit-transform .5s, opacity .25s .1s;
+		transition: transform .5s, opacity .25s .1s;
+
+		-moz-perspective: 1500px;
+
+		//-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		backface-visibility: hidden;
+
+		width:250px;
+		height:250px;
+		left:50%;
+		margin-left:-125px;
+		top:50%;
+		margin-top: -125px;
+
+		@media(min-width:$screen-xs){
+			width:400px;
+			height:400px;
+			margin-left:-200px;
+			margin-top: -200px;
+		}
+
+		@media(min-width:$screen-sm){
+			width:200px;
+			height:200px;
+			margin-left:-100px;
+			margin-top: -100px;
+		}
+
+		@media(min-width:$screen-md){
+			width:270px;
+			height:270px;
+			margin-left:-135px;
+			margin-top: -135px;
+		}
+
+		@media(min-width:$screen-lg){
+			width:270px;
+			height:270px;
+			margin-left:-135px;
+			margin-top: -135px;
+		}
+	}
+	.tile-content{
+		display: table-cell;
+		vertical-align: middle;
+
+	}
+
+	.tile-header{
+		font-size: 34px;
+		padding:20px 20px 0;
+	}
+
+	.tile-text{
+		overflow: hidden;
+		max-height:0;
+		opacity: 0;
+		padding:0 20px 20px;
+
+		@media(min-width:$screen-sm) and (max-width:$screen-md - 1){
+			font-size: 14px;
+		}
+
+		.lt-ie9 &{
+			display: none;
+		}
+	}
+
+	.slide1{
+		z-index:10
+	}
+
+	.slide2{
+		opacity:0;
+		z-index:5;
+		-webkit-transform: rotateY(-180deg);
+		transform: rotateY(-180deg);
+		color:$white;
+		background:$black;
+
+		
+		.tile-header{
+			font-size: 20px;
+		}
+		.tile-text{
+			opacity: 1;
+			max-height:250px; 
+			
+			.lt-ie9 &{
+				display: block;
+			}
+		}
+	}
+
+	&:hover,
+	&.active{
+		.slide1{
+			-webkit-transform: rotateY(180deg);
+			transform: rotateY(180deg);
+			opacity: 0;
+
+			.no-csstransforms3d &{
+				display: none;
+			}
+		}
+
+		.slide2{
+			z-index:5;
+			-webkit-transform: rotateY(0deg);
+			transform: rotateY(0deg);
+			opacity: 1;
+
+			.no-csstransforms3d &{
+				display: block;
+			}
+		}
+	}
+}
+
+.tile-info{
+	@extend .tile;
+	color:$black;
+	display:block;
+
+	&:hover{
+		text-decoration: none;
+		color:$black;
+	}
+	
+	@media(min-width: $screen-sm) and(max-width: $screen-md - 1){
+		@include rem('font-size',12px);
+	}
+
+	.tile-header {
+		margin:20px 0 45px;
+
+		@media(min-width: $screen-sm) and(max-width: $screen-md - 1){
+			@include rem('font-size',22px);
+		}
+		
+		@media(min-width:$screen-sm){
+			margin:0 0 10px;
+		}
+	}
+
+	.tile-content {
+		display:block;
+		transition: all .3s;
+		-webkit-transition: all .3s;
+		position:relative;
+
+
+		.tile-text{
+			display: none;
+
+			@media(min-width:$screen-sm){
+				display: block;
+				opacity: 0;
+				-webkit-transition: all .3s linear;
+				transition: all .3s linear;
+				//position:absolute;
+
+				.no-opacity &{
+					display: none;
+				}
+			}
+		}
+		&:before{
+			@extend .btn-arrow-right;
+			position:absolute;
+			bottom:0;
+			right:-15px;
+			display:block;
+			content: "";
+		
+			@media(min-width:$screen-sm){
+				right:0;
+			}
+		}
+	}
+
+	@media(min-width:$screen-sm){
+		&:hover	{
+		text-decoration: none;
+		color: $grey;
+
+			.tile-content{
+			background: $grey-darkest;
+			color:$white;
+
+				.tile-text{
+					opacity: 1;
+					color: $grey;
+					-webkit-transition: all .3s linear;
+					transition: all .3s linear;
+					.no-opacity &{
+						display: block;
+					}
+				}
+			}
+		}	
+	}
+}
+
+.tile-quote{
+	@extend .tile;
+
+	blockquote {
+		@media(min-width: $screen-sm) and(max-width: $screen-md - 1){
+			@include rem('font-size',14px);
+		}
+		footer {
+			@media(min-width: $screen-sm) and(max-width: $screen-md - 1){
+				@include rem('font-size',12px);
+			}
+		}
+	}
+
+	
+	@media(min-width:$screen-sm){
+		.tile-content{
+			vertical-align: middle;
+		}
+	}
+	blockquote{
+		margin:0;
+	}
+}
+
+.tile-photo{
+	display: block;
+	color:$black;
+
+	-webkit-perspective: 1500px;
+	-moz-perspective: 1500px;
+	perspective: 1500px;
+
+	@media(min-width:$screen-sm){
+		width:$container-tablet / 2;
+		height:$container-tablet / 2;
+	}
+
+	@media(min-width:$screen-md){
+		width:$container-desktop / 2;
+		height:$container-desktop / 2;
+	}
+
+	@media(min-width:$screen-lg){
+		width:$container-large-desktop / 2;
+		height:$container-large-desktop / 2;
+	}
+
+	.tile-content-wrapper-outer{
+		@media(min-width:$screen-sm){
+			width:100%;
+			height:100%;
+			position:absolute;
+			top:0;
+			bottom:0;
+			left:0;
+			right:0;
+		}
+	}
+
+	.tile-content{
+		display: none;
+		@media(min-width:$screen-sm){
+			display: block;
+			background:$white;
+			position:absolute;
+			top:50%;
+			left:50%;
+			width:320px;
+			height:320px;
+			margin-left: -160px;
+			margin-top: -160px;
+			padding: 30px;
+			opacity: 0;
+			-webkit-transition: all .5s;
+			transition: all .5s;
+			-webkit-transform: rotateY(80deg);
+			transform: rotateY(80deg);
+
+			.no-opacity &{
+				display: none;
+			}
+		}
+	}
+
+	&:hover .tile-content {
+		@media(min-width:$screen-sm){
+			opacity: 1;
+			-webkit-transform: rotateY(0);
+			transform: rotateY(0);
+
+			.no-opacity &{
+				display: block;
+			}
+		}
+	}
+}
+
+.tile-link{
+	@extend .tile;
+	position:relative;
+	background-size:cover;
+	@include clearfix();
+	transition:opacity .3s;
+	-webkit-transition:opacity .3s;
+
+	&:hover{
+		opacity: .8;
+	}
+
+	& > a {
+		@include rem('font-size', 25px);
+		@extend .sans-serif;
+		@extend .caps;
+		color:$black;
+		margin:30px;
+		padding:20px 20px 40px;
+		display: block;
+		background: $white;
+		position: relative;
+
+		@media(max-width:$screen-sm - 1){
+			position:absolute;
+			top:0;
+			right:0;
+			bottom:0;
+			left:0;
+		}
+
+		&:hover {
+			text-decoration: none;
+		}
+
+		@media(min-width:$screen-sm){
+			position:absolute;
+			top:30px;
+			right:30px;
+			bottom:30px;
+			left:30px;
+			margin:0;
+		}
+
+		@media(min-width:$screen-sm) and (max-width:$screen-md - 1){
+			top:15px;
+			right:15px;
+			bottom:15px;
+			left:15px;
+			@include rem('font-size',17px);
+		}
+
+		@media(min-width:$screen-md) and (max-width:$screen-lg - 1){
+			@include rem('font-size',21px);
+		}
+
+		&:before{
+			@extend .btn-arrow-right;
+			position:absolute;
+			bottom:0;
+			right:0;
+			display:block;
+			content: "";
+		}
+	}
+}
+
+.tile-sectioning{
+	height:20px;
+	@media(min-width:$screen-sm){
+		height:30px;
+	}
+}

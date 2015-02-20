@@ -1,0 +1,20 @@
+.schedule{
+	margin-bottom:20px;
+
+	@media(min-width:$screen-sm){
+		display: table;
+		margin-bottom: 0;
+	}
+
+	.schedule-day{
+		margin-bottom:3px;
+		@include clearfix();
+		padding:30px 30px 15px;
+	
+		@media(min-width:$screen-sm){
+			display: table-cell;
+			border:15px solid $white;
+			float:none;
+		}
+	}
+}

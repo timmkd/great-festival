@@ -1,0 +1,93 @@
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+	text-transform: uppercase;
+	margin-top:0;
+	line-height:1.2;
+}
+
+h1,
+.h1{
+	@include rem('font-size',35px);
+	@include sans-serif();
+	margin-bottom:20px;
+	@media(min-width:$screen-sm){
+		@include rem('font-size',50px);
+	}
+}
+
+.h1-lg{
+	@extend .h1;
+	@include rem('font-size',50px);
+	@media(min-width:$screen-sm){
+		@include rem('font-size',80px);
+	}
+}
+
+.h1-sm{
+	@extend .h1;
+	@include rem('font-size',45px);
+}
+
+h2, 
+.h2{
+	@include sans-serif();
+	margin-bottom:20px;
+		@include rem('font-size',30px);
+
+	@media(min-width:$screen-sm){
+		@include rem('font-size',40px);
+	}
+
+}
+
+h3, 
+.h3{
+	@include rem('font-size',30px);
+	@include sans-serif();
+	margin-bottom:20px;
+	letter-spacing:0px;
+
+	@media(min-width:$screen-sm){
+		@include rem('font-size',35px);
+	}
+}
+
+h4, 
+.h4{
+	@include rem('font-size',30px);
+	@include sans-serif();
+	margin-bottom:20px;
+}
+
+h5, 
+.h5{
+	@include rem('font-size',24px);
+	@include sans-serif();
+	margin-bottom:20px;
+	letter-spacing:0;
+}
+
+h6, 
+.h6{
+	@include rem('font-size',18px);
+	@include sans-serif();
+	margin-bottom:10px;
+}
+
+blockquote{
+	@extend .caps;
+	@include rem('font-size',22px);
+	font-family:$font-family-sans-serif;
+	text-align:center;
+	margin:10px;
+}
+
+p{ margin: 0 0 1em;}
+
+ol ol{
+	list-style-type:lower-alpha;
+}
+
+// Alignment
+.text-left           { text-align: left; }
+.text-right          { text-align: right; }
+.text-center         { text-align: center; }

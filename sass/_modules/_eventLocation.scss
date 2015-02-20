@@ -1,0 +1,61 @@
+.event-location{
+	position:relative;
+	height:450px;
+
+	@media(min-width:$screen-sm){
+		height:460px;
+	}
+
+	.bg-mobile,
+	.bg-desktop{
+		position:absolute;
+		top:0;
+		bottom:0;
+		left:0;
+		right:0;
+		display: none;
+	}
+	.bg-mobile{
+		@media(max-width:$screen-sm - 1){
+			display: block;
+		}
+	}
+	.bg-desktop{
+		@media(min-width:$screen-sm){
+			display: block;
+		}
+	}
+}
+
+.event-box{
+	margin:0;
+
+	.border-box{
+		@media(min-width:$screen-sm){
+			margin:25px 0 50px;
+		}
+	}
+}
+
+
+
+.event-location-with-map{
+	position:relative;
+	
+	.event-box{
+		position:absolute;
+		z-index:100;
+		top:70px;
+		left:33%;
+		right:33%;
+		padding:30px;
+	}	
+
+	.map{
+		display: none;
+		@media(min-width:$screen-sm){
+			display: block;
+			height:500px;
+		}
+	}
+}

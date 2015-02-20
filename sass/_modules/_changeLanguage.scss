@@ -1,0 +1,42 @@
+.language-select{
+	display:inline-block;
+	position:relative;
+
+	.popout{display:none;}
+	cursor:pointer;
+
+	&.hover,
+	&.active{
+		.popout{
+			display: block;
+			position: absolute;
+			left:0;
+			bottom: 35px;
+			background: $white;
+			width:110px;
+			z-index:100;
+			box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+
+			&:before{
+				background: url(../images/arrow-tooltip.png);
+				content: "";
+				width: 30px;
+				height: 22px;
+				position: absolute;
+				bottom: -22px;
+				left: 40px;
+				z-index: -1;
+			}
+
+			.item > a{
+				display: block;
+				padding:5px 10px;
+				text-align:left;
+				border-bottom:1px solid $grey-lighter;
+			}
+			.item:last-child a{
+					border-bottom:0;
+			}
+		}
+	}
+}

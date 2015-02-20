@@ -1,0 +1,51 @@
+input,
+textarea,
+select{
+	&.fullwidth {
+		margin-bottom:10px;
+	}
+
+	font-size:18px;
+	padding:10px 15px;
+	border:1px solid $grey-light;
+	border-radius:0;
+
+	&.error{
+		color:$red-dark;
+		background: lighten($red, 42%)
+	}
+}
+select.fullwidth {
+	height:40px;
+	color:$grey;
+
+	option {
+		color:$grey;
+	}
+}
+
+label{
+		&.error{
+		@extend .sans-serif;
+		color:$red-dark;
+		display: block;
+		margin-bottom: 10px;
+		margin-top:-5px;
+		font-size:$font-size-small;
+		text-align: left;
+	}
+
+	&.no-placeholder{
+		display: none;
+		.no-placeholder &
+		{
+			display:block;
+		}	
+	}
+}
+
+.enquiry-form{
+	textarea {
+		height:149px;
+	}
+}

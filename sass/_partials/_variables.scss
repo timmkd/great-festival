@@ -1,0 +1,53 @@
+// Colors
+// -------------------------
+$white:#fff;
+$black:#000;
+$grey-lightest: #f2f2f2;
+$grey-lighter: #dcdcdc;
+$grey-light: #ccc;
+$grey: #999;
+$grey-medium-dark: #666;
+$grey-dark: #333;
+$grey-darker: #272727;
+$grey-darkest: #1a1a1a;
+$grey-blue: #566168;
+$blue: #12044b;
+$red: #ed2d24;
+$red-dark: #d32d24;
+
+$color-twitter: #29abe2;
+$color-youtube: #ed3437;
+$color-facebook: #0071bc;
+
+$link-color:            $blue;
+$link-hover-color:      $blue;
+
+// Typography
+// -------------------------
+
+$font-size-base:          16px;
+$font-size-large:         ceil($font-size-base * 1.125); // ~18px
+$font-size-small:         ceil($font-size-base * 0.875); // ~14px
+$font-size-x-small:       ceil($font-size-base * 0.75); // ~12px
+$font-size-xx-small:      ceil(11px); // ~12px
+$font-family-serif:       "Caslon 540 LT W01 Roman", "Times New Roman", Times, serif !default;
+$font-family-serif-italic: "Caslon540LTW01-Italic", "Times New Roman", Times, serif !default;
+$font-family-sans-serif:   "Interstate", Arial, sans-serif !default;
+
+
+// grid
+$grid-gutter-width: 30px;
+
+
+
+// Container sizes
+// --------------------------------------------------
+
+// Small screen / tablet
+$container-tablet:             ((726px + $grid-gutter-width));
+
+// Medium screen / desktop
+$container-desktop:            ((962px + $grid-gutter-width));
+
+// Large screen / wide desktop
+$container-large-desktop:      ((1200px));
